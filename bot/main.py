@@ -8,6 +8,18 @@ API_KEY = os.getenv("API_KEY")
 dcc_bot = telebot.TeleBot(API_KEY)
 
 
+@dcc_bot.message_handler(commands= ["PrimeiroPeriodo"])
+def primeiro_periodo(message):
+    dcc_bot.reply_to(message, """
+Agora escolha a disciplina do primeiro período que deseja consultar.
+
+/IPD
+/SistemasDeInformacao
+/NumerosInteirosCriptografia
+/Comp1
+/ProjetoDeCarreira
+/FundamentosDaComputacaoDigital""")
+
 # Função que faz verificação um tipo de mensagem. Por enquanto, retorna true, isso faz com que o bot responda qualquer mensagem digitada no chat.
 def verificar():
     return True
